@@ -1,0 +1,40 @@
+# 1. Check the website
+# 2. Understand the structure or how it feels
+# 3. Inspect elements
+
+# Check robots.txt
+# Every bot that might possibly read and respect this file
+# ========================================================
+# User-agent: *
+# Allow: /*
+# Allow: /hashtag/*
+# Allow: /search?q=
+
+# Disallow: /*?
+# Disallow: /user/Miles/*
+# Disallow: /*/followers
+# Disallow: /*/following
+# Disallow: /*/comments
+# Disallow: /*/medias
+# Disallow: /*/likes
+
+# # WHAT-4882 - Block indexing of links in notification emails. This applies to all bots.
+# # =====================================================================================
+
+# # Wait 1 second between successive requests. See ONBOARD-2698 for details.
+# Crawl-delay: 1
+
+# # Independent of user agent. Links in the sitemap are full URLs using https:// and need to match
+# # the protocol of the sitemap.
+# Sitemap: https://www.gettr.com/sitemap.xml
+
+1. Follow guidelines ToS - robots.txt file
+2. Comply with GPDR and other privacy measures
+3. Extract public data and avoid using it for commercial purposes
+4. Don't overstep scraping rate limits - add programmatic delay requests - varying time intervals
+5. Scrape during off-peak hours
+6. Cache your data - caching will increase your project's efficiency
+7. Make sure your tool can handle javascript - selenium or playwright - target old.reddit.com
+8. Use anti-detection  - stealth browsers and proxies
+9. reddit API 
+10. PRAW

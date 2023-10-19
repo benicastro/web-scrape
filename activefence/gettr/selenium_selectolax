@@ -1,0 +1,36 @@
+# Import needed modules/libraries
+import httpx
+from selectolax.parser import HTMLParser
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import pandas as pd
+import time
+
+# Keep Chrome browser open after program finishes ###########
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_experimental_option("detach", True)
+
+# Create driver with Chrome #################################
+driver = webdriver.Chrome(chrome_options=chrome_options)
+# For maximizing window
+driver.maximize_window()
+# # Gives an implicit wait for 20 seconds
+driver.implicitly_wait(20)
+
+# Convert text file consisting of url sources to list
+with open(".\sample_sources.txt") as file:
+    urls = file.read().split("\n")
+url = urls[0]
+
+driver.get(url)
+
+# for i in range(3):
+#     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+#     time.sleep(4)
+
+html = HTMLParser(driver.page_source)
+
+elements = html.css(".k")
+
+for e in elements:
+    print(e.text(strip=True))

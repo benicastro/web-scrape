@@ -1,0 +1,5 @@
+https://api.gettr.com/u/user/valiantnews/posts?offset=0&max=100&dir=fwd&incl=posts%5E%25%5E7Cstats%5E%25%5E7Cuserinfo%5E%25%5E7Cshared%5E%25%5E7Cliked%5E%25%5E7Cpvotes&fp=f_uo
+
+https://api.gettr.com/u/user/valiantnews/posts?offset=0&max=20&dir=fwd&incl=posts%7Cstats%7Cuserinfo%7Cshared%7Cliked%7Cpvotes&fp=f_uo&cursor=MTY1MzQxOTk5NDgzN19AX2E0dDNmMm83MjU1Mg%3D%3D
+
+https://api.gettr.com/u/user/valiantnews/posts?offset=0&max=20&dir=fwd&incl=posts%5E%25%5E7Cstats%5E%25%5E7Cuserinfo%5E%25%5E7Cshared%5E%25%5E7Cliked%5E%25%5E7Cpvotes&fp=f_uo&cursor=MTY1MjgxODM2MjU2MF9AX2E0cTYyNjM0NGFmNw%5E%25%5E3D%5E%25%5E3D
