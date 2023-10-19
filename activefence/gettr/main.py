@@ -66,8 +66,7 @@ def get_response(user, offset):
 users_info = []
 max_posts = 100
 
-for user in users:
-    print(user)
+for user in [users[0]]:
     posts = []
 
     for offset in range(0, max_posts, 20):
@@ -110,7 +109,9 @@ for user in users:
         time.sleep(random.randint(2, 4))
 
     users_info.append(posts)
+    print(f"Extracting info from user, {user}, done...")
+    print(users_info)
 
 # Save data to csv
 df = pd.DataFrame(users_info, index=users)
-df.to_csv("gettr_data.csv")
+df.to_csv("gettr_data_test.csv")
