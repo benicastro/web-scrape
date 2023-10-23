@@ -36,22 +36,22 @@ def get_response(user, offset):
     payload = ""
 
     headers = {
-        "cookie": "nlbi_2794913=Xw6tUoZ1Yn1ZCod+TDNW3QAAAABTuNqmO3y/Nl3Qre2XUveZ; __qca=P0-1182411913-1697632748159; _gcl_au=1.1.1948305308.1697632756; visid_incap_2794806=o3tnovQPSwaKdC2GYJf37dXRL2UAAAAAQUIPAAAAAADX/oeuz5dXpfRdUdrisGZR; nlbi_2794806=mfiTOgallxmWV5rJI5Ci3wAAAABFkz0uYDxMpzPynGTq+Nho; _ga=GA1.1.1026719266.1697632759; incap_ses_172_2794913=VazZE60rKGo9vzLHJBFjAhTmL2UAAAAAcdKI76Pha01rlKw7mb0T/A==; reese84=3:E+gr4n0YMC51H/3ujs1heQ==:olkdI8VvBdLkbB3beBkDu7fe6Bt5oBs14q26RJ8kHUREvw+6RHs1PBfmsjVNw4a/6NnrTjz1CwmMk0qH1C9ub3Hm6rrEIDAML0odN90tNiG3RepXwQ5SGAiuJbZY031PWyM7EMGmwTj7ruG4wiD4B6yKHqULssXEebwSSvuAx2rn/lv1MipgfJG+9T5782CSg3HNOeaqNZeZ/FILAkcGZflKjuG5dRJJ1C/SSzlNRbjte1SeRAqHnlkDBtKpHyTVJ+sab0F9s8O0dq87deBvzF7T5fQ89XLIDve9lokcuhCEk2gUefEqiEX88mG53lR/yyyyuaRnZMrj12C82k4aQ8avs2PAV7X4owu+MMgfgpkCFttweIRYgZ5y5fVE9z/ccB6ZSNgmIE1foWFVCOy4Wvwp8axL53Q0yo3wx0l1nvWbx0DDPUp/sNfN1R7mrUxDWJNwTM7oVkEcbEU0o9EfQttuPIVM/kBeq85EtY+BrVq0L4UxiaXuv6/pM84/m37m:E13e7JCFhLsSwg/9fksiXMwXur2WiBV8zyfemsNJQ28=; incap_ses_1635_2794806=sHCvbZl5TkLLErdJALCwFhTmL2UAAAAA/X+ck8LvGQBh+QQ7q3tHpg==; incap_ses_1290_2794913=niXyBmpEgku/D04qDAHnEQfoL2UAAAAAueJjxeBEGLz3j3+yB8AnhA==; visid_incap_2794913=460fJ5hORlKX/DPZQbGFriRaLmUAAAAAQkIPAAAAAACAVbuvAZ4+YtIpdwQcf9jCl9Yam27ZkCQU; nlbi_2794913_2147483392=MYRRdhSy2lRYJDOsTDNW3QAAAADnGPjud/wh3yfLUQEkv1Q3; incap_ses_676_2794913=oMMIIvbB3w9+gbjZfaNhCRXoL2UAAAAAa0bxqj5n7gp5sm6HC9+mBQ==; __gads=ID=d10423cbd4c287e8:T=1697632773:RT=1697638423:S=ALNI_MaSZmnacuX8LsTgFVinhqGHWCpUVg; __gpi=UID=00000c66da9eb251:T=1697632773:RT=1697638423:S=ALNI_MaE5RMf0UJ9muXolLKQS-OSvVaD6w; _ga_MH1FJK8TCY=GS1.1.1697638408.2.1.1697638471.59.0.0",
-        "authority": "api.gettr.com",
-        "accept": "application/json, text/plain, */*",
-        "accept-language": "en-US,en;q=0.9",
-        "lan": "en_us",
-        "origin": "https://gettr.com",
-        "referer": "https://gettr.com/",
-        "sec-ch-ua": "^\^Chromium^^;v=^\^118^^, ^\^Google",
-        "sec-ch-ua-mobile": "?0",
-        "sec-ch-ua-platform": "^\^Windows^^",
-        "sec-fetch-dest": "empty",
-        "sec-fetch-mode": "cors",
-        "sec-fetch-site": "same-site",
+        # "cookie": "nlbi_2794913=Xw6tUoZ1Yn1ZCod+TDNW3QAAAABTuNqmO3y/Nl3Qre2XUveZ; __qca=P0-1182411913-1697632748159; _gcl_au=1.1.1948305308.1697632756; visid_incap_2794806=o3tnovQPSwaKdC2GYJf37dXRL2UAAAAAQUIPAAAAAADX/oeuz5dXpfRdUdrisGZR; nlbi_2794806=mfiTOgallxmWV5rJI5Ci3wAAAABFkz0uYDxMpzPynGTq+Nho; _ga=GA1.1.1026719266.1697632759; incap_ses_172_2794913=VazZE60rKGo9vzLHJBFjAhTmL2UAAAAAcdKI76Pha01rlKw7mb0T/A==; reese84=3:E+gr4n0YMC51H/3ujs1heQ==:olkdI8VvBdLkbB3beBkDu7fe6Bt5oBs14q26RJ8kHUREvw+6RHs1PBfmsjVNw4a/6NnrTjz1CwmMk0qH1C9ub3Hm6rrEIDAML0odN90tNiG3RepXwQ5SGAiuJbZY031PWyM7EMGmwTj7ruG4wiD4B6yKHqULssXEebwSSvuAx2rn/lv1MipgfJG+9T5782CSg3HNOeaqNZeZ/FILAkcGZflKjuG5dRJJ1C/SSzlNRbjte1SeRAqHnlkDBtKpHyTVJ+sab0F9s8O0dq87deBvzF7T5fQ89XLIDve9lokcuhCEk2gUefEqiEX88mG53lR/yyyyuaRnZMrj12C82k4aQ8avs2PAV7X4owu+MMgfgpkCFttweIRYgZ5y5fVE9z/ccB6ZSNgmIE1foWFVCOy4Wvwp8axL53Q0yo3wx0l1nvWbx0DDPUp/sNfN1R7mrUxDWJNwTM7oVkEcbEU0o9EfQttuPIVM/kBeq85EtY+BrVq0L4UxiaXuv6/pM84/m37m:E13e7JCFhLsSwg/9fksiXMwXur2WiBV8zyfemsNJQ28=; incap_ses_1635_2794806=sHCvbZl5TkLLErdJALCwFhTmL2UAAAAA/X+ck8LvGQBh+QQ7q3tHpg==; incap_ses_1290_2794913=niXyBmpEgku/D04qDAHnEQfoL2UAAAAAueJjxeBEGLz3j3+yB8AnhA==; visid_incap_2794913=460fJ5hORlKX/DPZQbGFriRaLmUAAAAAQkIPAAAAAACAVbuvAZ4+YtIpdwQcf9jCl9Yam27ZkCQU; nlbi_2794913_2147483392=MYRRdhSy2lRYJDOsTDNW3QAAAADnGPjud/wh3yfLUQEkv1Q3; incap_ses_676_2794913=oMMIIvbB3w9+gbjZfaNhCRXoL2UAAAAAa0bxqj5n7gp5sm6HC9+mBQ==; __gads=ID=d10423cbd4c287e8:T=1697632773:RT=1697638423:S=ALNI_MaSZmnacuX8LsTgFVinhqGHWCpUVg; __gpi=UID=00000c66da9eb251:T=1697632773:RT=1697638423:S=ALNI_MaE5RMf0UJ9muXolLKQS-OSvVaD6w; _ga_MH1FJK8TCY=GS1.1.1697638408.2.1.1697638471.59.0.0",
+        # "authority": "api.gettr.com",
+        # "accept": "application/json, text/plain, */*",
+        # "accept-language": "en-US,en;q=0.9",
+        # "lan": "en_us",
+        # "origin": "https://gettr.com",
+        # "referer": "https://gettr.com/",
+        # "sec-ch-ua": "^\^Chromium^^;v=^\^118^^, ^\^Google",
+        # "sec-ch-ua-mobile": "?0",
+        # "sec-ch-ua-platform": "^\^Windows^^",
+        # "sec-fetch-dest": "empty",
+        # "sec-fetch-mode": "cors",
+        # "sec-fetch-site": "same-site",
         "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36",
-        "ver": "2.7.0",
-        "x-app-auth": "^{^\^user^^: null, ^\^token^^: null^}",
+        # "ver": "2.7.0",
+        # "x-app-auth": "^{^\^user^^: null, ^\^token^^: null^}",
     }
 
     # Request handling #################################################
@@ -64,7 +64,7 @@ def get_response(user, offset):
 
 # Create list to store all user posts info
 users_info = []
-max_posts = 100
+max_posts = 20
 
 for user in [users[0]]:
     posts = []
@@ -79,8 +79,6 @@ for user in [users[0]]:
             data["result"]["data"]["list"][x]["activity"]["pstid"]
             for x in range(num_posts)
         ]
-
-        # Create list to store posts
 
         for id in post_ids:
             posts_info = {}
@@ -112,6 +110,6 @@ for user in [users[0]]:
     print(f"Extracting info from user, {user}, done...")
     print(users_info)
 
-# Save data to csv
-df = pd.DataFrame(users_info, index=users)
-df.to_csv("gettr_data_test.csv")
+# # Save data to csv
+# df = pd.DataFrame(users_info, index=users)
+# df.to_csv("gettr_data_test.csv")
