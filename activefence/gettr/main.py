@@ -49,6 +49,7 @@ def get_response(user, offset):
         # "sec-fetch-dest": "empty",
         # "sec-fetch-mode": "cors",
         # "sec-fetch-site": "same-site",
+        "cookie": "visid_incap_2794806=N09vhMViQTaT9sYUQ55V4GvpL2UAAAAAQUIPAAAAAABaeCTkUTK4DvjCTVeMKuTe; nlbi_2794806=hwYYQpV3eQAj%2FAsYI5Ci3wAAAABp5uvsT8nW7%2FLKSSEQcGim; incap_ses_1636_2794806=R63pf9t%2FeGyWKhYgwD20FnB9QmUAAAAAe%2BAyHLZnQDBQatPqu3MMcg%3D%3D",
         "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36",
         # "ver": "2.7.0",
         # "x-app-auth": "^{^\^user^^: null, ^\^token^^: null^}",
@@ -66,7 +67,7 @@ def get_response(user, offset):
 users_info = []
 max_posts = 20
 
-for user in [users[0]]:
+for user in [users[3]]:
     posts = []
 
     for offset in range(0, max_posts, 20):
