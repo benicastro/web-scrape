@@ -86,13 +86,22 @@ def main():
         if html is False:
             continue
 
-        media_nodes = extract_media(html, "div.thread")
+        # media_nodes = extract_media(html, "div.thread")
+        media_nodes = extract_media(html, "div.mix")
+
         for node in media_nodes:
-            media_link = node.css_first("a.fileThumb").attrs["href"]
+            # media_link = node.css_first("a.fileThumb").attrs["href"]
+            media_link = node.css_first("img.thread-image").attrs["src"]
             # print(media_link)
 
             try:
-                text = node.css_first("div.postInfo > span.subject").text()
+                # text = node.css_first("div.postInfo > span.subject").text()
+                # text_subject = node.css_first("p.intro > span.subject").text()
+                # text_node = node.css_first("div.replies")
+                # te
+                text = (
+                    node.css_first("div.replies").text().strip().split("View thread")[1]
+                )
             except KeyError:
                 text = "null"
             # print(text)
@@ -106,7 +115,7 @@ def main():
 
             website_data.append(asdict(entry))
 
-        time.sleep(random.randint(2, 4))  # Limit request frequency
+        time.sleep(random.randint(1, 3))  # Limit request frequency
 
     print(website_data)
 
