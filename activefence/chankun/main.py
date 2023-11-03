@@ -77,7 +77,7 @@ def get_entry(website_link, date_collected, media_link, text):
 # Main #############################################################
 def main():
     website_data = []
-    for url in [urls[0]]:
+    for url in [urls[2]]:
         print(url)
         collection_date = date.today().strftime("%Y-%m-%d")  # Get collection date
         html = get_html(url)
