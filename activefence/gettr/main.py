@@ -67,12 +67,13 @@ def get_response(user, offset):
 users_info = []
 max_posts = 20
 
-for user in [users[3]]:
+for user in [users[0]]:
     posts = []
 
     for offset in range(0, max_posts, 20):
         # JSON handling
         data = json.loads(get_response(user, offset).text)
+        print(data)
 
         # Extract post ids
         num_posts = len(data["result"]["data"]["list"])
@@ -102,6 +103,9 @@ for user in [users[3]]:
                     posts_info["image"] = "null"
             except KeyError:
                 posts_info["image"] = "null"
+
+            try:
+                
 
             posts.append(posts_info)
 
