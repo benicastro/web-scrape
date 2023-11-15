@@ -104,8 +104,7 @@ for user in [users[0]]:
             except KeyError:
                 posts_info["image"] = "null"
 
-            try:
-                
+            # try:
 
             posts.append(posts_info)
 
