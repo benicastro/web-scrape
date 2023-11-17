@@ -27,7 +27,7 @@ driver.implicitly_wait(20)
 def main():
     url = "https://4chansearch.com/?q=DallE+more%3Apol&s=1"
 
-    for page in range(10, 11):
+    for page in range(2, 3):
         driver.get(url)
         page_element = driver.find_element(
             By.CSS_SELECTOR, value=f"div.gsc-cursor-page[aria-label='Page {page}']"
