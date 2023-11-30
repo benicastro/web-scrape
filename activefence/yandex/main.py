@@ -1,33 +1,33 @@
 # import json
 # import requests
 
-# file_path = "C:\\Users\\bened\\Downloads\\benz.jpg"
-# search_url = "https://yandex.com/images/search"
-# files = {"upfile": ("benz", open(file_path, "rb"), "image/jpeg")}
-# params = {
-#     # "tmpl_version": "releases/frontend/images/v1.1177.0#24640fb79140881cd203ed5abccc106754f23004",
-#     "rpt": "imageview",
-#     "format": "json",
-#     # "request": '{"blocks":[{"block":"b-page_type_search-by-image__link"}]}',
-#     # "request": '{"blocks":[{"block":"extra-content"}]}',
-#     "request": '{"blocks":[{"block":"b-page_type_search-by-image__link"}]}',
-#     # "request": '{"blocks":[{"block":"block":"i-react-ajax-adapter:ajax"}]}',
-# }
-# response = requests.post(search_url, params=params, files=files)
-# query_string = json.loads(response.content)["blocks"][0]["params"]["url"]
-# img_search_url = search_url + "?" + query_string
-# print(img_search_url)
-# print(response.content)
+file_path = "C:\\Users\\bened\\Downloads\\benz.jpg"
+search_url = "https://yandex.com/images/search"
+files = {"upfile": ("benz", open(file_path, "rb"), "image/jpeg")}
+params = {
+    # "tmpl_version": "releases/frontend/images/v1.1177.0#24640fb79140881cd203ed5abccc106754f23004",
+    "rpt": "imageview",
+    "format": "json",
+    # "request": '{"blocks":[{"block":"b-page_type_search-by-image__link"}]}',
+    # "request": '{"blocks":[{"block":"extra-content"}]}',
+    "request": '{"blocks":[{"block":"b-page_type_search-by-image__link"}]}',
+    # "request": '{"blocks":[{"block":"block":"i-react-ajax-adapter:ajax"}]}',
+}
+response = requests.post(search_url, params=params, files=files)
+query_string = json.loads(response.content)["blocks"][0]["params"]["url"]
+img_search_url = search_url + "?" + query_string
+print(img_search_url)
+print(response.content)
 
-urls = [
-    "s3://activefence-user/ilank/gen-ai/media/55220e9aecbecab1f4b56a9d1880485784b19c6eb0e9e42a6eda53d5787eb316"
-]
+# urls = [
+#     "s3://activefence-user/ilank/gen-ai/media/55220e9aecbecab1f4b56a9d1880485784b19c6eb0e9e42a6eda53d5787eb316"
+# ]
 
-bucket = urls[0].split("/")[2]
-print(bucket)
+# bucket = urls[0].split("/")[2]
+# print(bucket)
 
-key = urls[0].split(f"{bucket}/")[1]
-print(key)
+# key = urls[0].split(f"{bucket}/")[1]
+# print(key)
 ################################################################################################################################
 
 
