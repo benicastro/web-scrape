@@ -71,12 +71,12 @@ class Twitter_RapidAPI:
             except KeyError:
                 try:
                     print(
-                        f"No tweets found. API Response: '{response.json()['message']}'. Please notify Charles Cardona on Slack (charlesc@extaf.com)."
+                        f"No tweets found. API Response: '{response.json()['message']}'."
                     )  # API gave a response message
                     break
                 except KeyError:
                     print(
-                        f"No tweets found. API Response: '{response.json()}'. Please notify Charles Cardona on Slack (charlesc@extaf.com)."
+                        f"No tweets found. API Response: '{response.json()}'."
                     )  # Could be a different case.
                     break
                 except Exception as e:
@@ -101,7 +101,7 @@ class Twitter_RapidAPI:
 
 
 class SheetsUtils:
-    def __init__(self, creds_path="/dbfs/mnt/user/ilank/client_secret_ilan.json"):
+    def __init__(self, creds_path=""):
         self.creds_path = creds_path
 
     def gs_to_dict(self, tab_name, spreadsheet_id):
